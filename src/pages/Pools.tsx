@@ -202,10 +202,6 @@ export default function Pools() {
   useEffect(() => {
     const controller = new AbortController();
 
-    // eslint-disable-next-line react-hooks/set-state-in-effect
-    setIsLoading(true);
-    setError(null);
-
     fetchPoolStats(controller.signal)
       .then((result) => setData(result))
       .catch((err) => {
